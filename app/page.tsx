@@ -76,7 +76,13 @@ export default function HomePage() {
               className="mt-10 flex flex-wrap gap-4"
             >
               <button className="rounded-2xl bg-blue-600 px-8 py-4 text-white text-lg font-semibold hover:scale-105 transition">
-                Записаться
+                <a
+  href="https://t.me/alextutor72"
+  target="_blank"
+  className="rounded-2xl bg-blue-600 px-8 py-4 text-white text-lg font-semibold hover:scale-105 transition inline-block"
+>
+  Написать в Telegram
+</a>
               </button>
 
               <button className="rounded-2xl border border-black px-8 py-4 text-lg font-semibold hover:bg-black hover:text-white transition">
@@ -243,7 +249,7 @@ export default function HomePage() {
 
           <div className="flex items-center gap-3 text-lg">
             <Mail className="w-5 h-5" />
-            your@email.com
+            alextutor72@gmail.com
           </div>
         </div>
       </footer>
