@@ -34,7 +34,7 @@ export default function HomePage() {
         "Очень понятные объяснения и комфортная атмосфера.",
     },
     {
-      name: "Максим",
+      name: "Макс",
       text:
         "Подготовился к экзамену намного лучше, чем ожидал.",
     },
@@ -239,7 +239,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-2xl font-bold">
-              Alex Tutor
+              Alexey Tutor
             </h3>
 
             <p className="mt-2 text-gray-500">
