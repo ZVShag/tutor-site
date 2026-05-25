@@ -1,5 +1,5 @@
 "use client";
-
+import Particles from "@/components/Particles";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
