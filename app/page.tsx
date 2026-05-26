@@ -3,6 +3,7 @@ import CursorGlow from "@/components/CursorGlow";
 import Particles from "@/components/Particles";
 import SmoothScroll from "@/components/SmoothScroll";
 import LoadingScreen from "@/components/LoadingScreen";
+import AITerminal from "@/components/AITerminal";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
       {/* BACKGROUND */}
+      
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.15),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.18),transparent_35%)]" />
 <CursorGlow />
 <Particles />
@@ -69,6 +71,7 @@ export default function Home() {
             <a href="#stats" className="hover:text-cyan-400">
               STATS
             </a>
+            <AITerminal />
             <a href="#contact" className="hover:text-cyan-400">
               CONTACT
             </a>
@@ -103,6 +106,7 @@ export default function Home() {
 
               <h1 className="text-6xl font-black leading-[0.9] tracking-tight md:text-8xl">
                 CYBER
+                
                 <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-fuchsia-500 bg-clip-text text-transparent">
                   TUTOR
                 </span>
@@ -259,8 +263,10 @@ export default function Home() {
             ].map((feature) => (
               <motion.div
                 whileHover={{
-                  y: -10,
-                  scale: 1.02,
+                  y: -15,
+                  rotateX: 8,
+                  rotateY: 8,
+                  scale: 1.03,
                 }}
                 key={feature}
                 className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-10 backdrop-blur-2xl"
