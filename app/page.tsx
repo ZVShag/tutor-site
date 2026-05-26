@@ -1,5 +1,8 @@
 "use client";
+import CursorGlow from "@/components/CursorGlow";
 import Particles from "@/components/Particles";
+import SmoothScroll from "@/components/SmoothScroll";
+import LoadingScreen from "@/components/LoadingScreen";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -14,7 +17,10 @@ export default function Home() {
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
       {/* BACKGROUND */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.15),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.18),transparent_35%)]" />
-
+<CursorGlow />
+<Particles />
+<LoadingScreen />
+<SmoothScroll />
       {/* GRID */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:70px_70px]" />
 
@@ -110,9 +116,9 @@ export default function Home() {
               <div className="mt-12 flex flex-wrap gap-5">
                 <motion.a
                   whileHover={{
-                    scale: 1.05,
-                    boxShadow:
-                      "0 0 40px rgba(34,211,238,0.8)",
+                    scale: 1.08,
+                    y: -4,
+                    boxShadow: "0 0 50px rgba(34,211,238,0.9)",
                   }}
                   whileTap={{ scale: 0.96 }}
                   href="#contact"
