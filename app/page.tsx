@@ -1,7 +1,6 @@
 "use client";
 
 import CursorGlow from "@/components/CursorGlow";
-import Particles from "@/components/Particles";
 import SmoothScroll from "@/components/SmoothScroll";
 import LoadingScreen from "@/components/LoadingScreen";
 import { motion } from "framer-motion";
@@ -18,15 +17,58 @@ export default function Home() {
     <main className="relative min-h-screen overflow-hidden bg-[#f5f7fb] text-black">
 
       <CursorGlow />
-      <Particles />
+      
       <LoadingScreen />
       <SmoothScroll />
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.12),transparent_35%)]" />
+<div className="absolute inset-0 overflow-hidden">
 
+  {/* base */}
+  <div className="absolute inset-0 bg-[#f5f7fb]" />
+
+  {/* mesh gradients */}
+  <motion.div
+    animate={{
+      x: [0, 80, 0],
+      y: [0, -60, 0],
+    }}
+    transition={{
+      duration: 18,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="absolute left-[-200px] top-[-200px] h-[500px] w-[500px] rounded-full bg-cyan-300/30 blur-3xl"
+  />
+
+  <motion.div
+    animate={{
+      x: [0, -100, 0],
+      y: [0, 80, 0],
+    }}
+    transition={{
+      duration: 22,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="absolute right-[-250px] top-[100px] h-[600px] w-[600px] rounded-full bg-violet-300/25 blur-3xl"
+  />
+
+  <motion.div
+    animate={{
+      x: [0, 60, 0],
+      y: [0, 100, 0],
+    }}
+    transition={{
+      duration: 26,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="absolute bottom-[-250px] left-[20%] h-[550px] w-[550px] rounded-full bg-sky-200/30 blur-3xl"
+  />
+</div>
       {/* GRID */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       {/* NAVBAR */}
       <header className="fixed top-0 z-50 w-full border-b border-black/5 bg-white/50 backdrop-blur-xl">
@@ -135,73 +177,122 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* RIGHT PANEL */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.95,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 1,
-            }}
-            className="relative"
-          >
+         {/* RIGHT PANEL */}
+<motion.div
+  initial={{
+    opacity: 0,
+    scale: 0.95,
+  }}
+  animate={{
+    opacity: 1,
+    scale: 1,
+  }}
+  transition={{
+    duration: 1,
+  }}
+  className="relative"
+>
+  <div className="relative overflow-hidden rounded-[40px] border border-white/40 bg-white/70 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl">
 
-            <div className="relative overflow-hidden rounded-[40px] border border-white/40 bg-white/60 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl">
+    {/* top blur */}
+    <div className="absolute right-[-100px] top-[-100px] h-[220px] w-[220px] rounded-full bg-cyan-400/20 blur-3xl" />
 
-              <div className="space-y-6">
+    {/* HEADER */}
+    <div className="flex items-center justify-between">
+      <div>
+        <div className="text-sm font-medium text-gray-400">
+          AI Dashboard
+        </div>
 
-                {[
-                  {
-                    icon: Brain,
-                    title: "Adaptive AI",
-                    desc: "Personalized learning experience",
-                  },
-                  {
-                    icon: GraduationCap,
-                    title: "Premium Education",
-                    desc: "Modern teaching methods",
-                  },
-                  {
-                    icon: Rocket,
-                    title: "Fast Progress",
-                    desc: "High-score exam preparation",
-                  },
-                ].map((item) => (
-                  <motion.div
-                    whileHover={{
-                      y: -6,
-                      scale: 1.02,
-                    }}
-                    key={item.title}
-                    className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-lg backdrop-blur-xl"
-                  >
+        <div className="mt-2 text-3xl font-black">
+          Student Analytics
+        </div>
+      </div>
 
-                    <div className="flex items-start gap-5">
+      <div className="rounded-2xl bg-cyan-100 px-4 py-2 text-sm font-bold text-cyan-700">
+        LIVE
+      </div>
+    </div>
 
-                      <div className="rounded-2xl bg-cyan-100 p-4 text-cyan-600">
-                        <item.icon className="h-8 w-8" />
-                      </div>
+    {/* SCORE CARD */}
+    <motion.div
+      whileHover={{
+        y: -4,
+      }}
+      className="mt-8 rounded-3xl border border-black/5 bg-gradient-to-br from-cyan-500 to-blue-500 p-8 text-white shadow-2xl"
+    >
+      <div className="text-sm opacity-80">
+        Average Progress
+      </div>
 
-                      <div>
-                        <div className="text-2xl font-bold">
-                          {item.title}
-                        </div>
+      <div className="mt-3 text-6xl font-black">
+        94%
+      </div>
 
-                        <div className="mt-2 text-gray-500">
-                          {item.desc}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+      <div className="mt-4 h-3 overflow-hidden rounded-full bg-white/20">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "94%" }}
+          transition={{
+            duration: 1.5,
+          }}
+          className="h-full rounded-full bg-white"
+        />
+      </div>
+    </motion.div>
+
+    {/* MINI STATS */}
+    <div className="mt-6 grid gap-5 md:grid-cols-2">
+
+      {[
+        ["120+", "Students"],
+        ["AI", "Assistant"],
+        ["24/7", "Support"],
+        ["1:1", "Mentoring"],
+      ].map(([value, label]) => (
+        <motion.div
+          whileHover={{
+            y: -4,
+            scale: 1.02,
+          }}
+          key={label}
+          className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-lg backdrop-blur-xl"
+        >
+          <div className="text-3xl font-black text-cyan-500">
+            {value}
+          </div>
+
+          <div className="mt-2 text-gray-500">
+            {label}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* AI STATUS */}
+    <motion.div
+      whileHover={{
+        y: -3,
+      }}
+      className="mt-6 rounded-3xl border border-black/5 bg-black p-6 text-white"
+    >
+      <div className="flex items-center justify-between">
+
+        <div>
+          <div className="text-sm text-gray-400">
+            AI Recommendation
+          </div>
+
+          <div className="mt-2 text-xl font-bold">
+            Personalized Learning Path Ready
+          </div>
+        </div>
+
+        <div className="h-4 w-4 rounded-full bg-green-400 shadow-[0_0_20px_rgba(74,222,128,0.9)]" />
+      </div>
+    </motion.div>
+  </div>
+</motion.div>
         </div>
       </section>
 
