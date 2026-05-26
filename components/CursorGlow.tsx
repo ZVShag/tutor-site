@@ -27,8 +27,8 @@ export default function CursorGlow() {
   return (
     <motion.div
       animate={{
-        x: position.x - 150,
-        y: position.y - 150,
+        x: position.x - 120,
+        y: position.y - 120,
       }}
       transition={{
         type: "spring",
@@ -36,7 +36,7 @@ export default function CursorGlow() {
         stiffness: 200,
         mass: 0.5,
       }}
-      className="pointer-events-none fixed z-[9999] h-[300px] w-[300px] rounded-full bg-cyan-400/20 blur-3xl"
+      className="pointer-events-none fixed left-0 top-0 z-30 h-[240px] w-[240px] rounded-full bg-cyan-400/5 blur-3xl"
     />
   );
 }
