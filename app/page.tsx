@@ -267,7 +267,7 @@ export default function Home() {
 
       <div>
         <div className="text-sm font-semibold tracking-[0.2em] text-cyan-500">
-          ANALYTICS
+          Аналитика
         </div>
         <section className="relative z-10 px-6 py-24">
 
@@ -284,7 +284,7 @@ export default function Home() {
       </h2>
     </div>
 
-    <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <div className="mt-16 flex flex-wrap justify-center gap-6">
 
       {[
         "МГУ",
@@ -298,8 +298,8 @@ export default function Home() {
             scale: 1.02,
           }}
           key={uni}
-          className="rounded-[36px] border border-white/40 bg-white/70 p-10 text-center shadow-xl backdrop-blur-2xl"
-        >
+          className="w-[220px] rounded-[36px] border border-white/40 bg-white/70 p-10 text-center shadow-xl backdrop-blur-2xl"
+          >
           <div className="text-3xl font-black">
             {uni}
           </div>
