@@ -505,9 +505,49 @@ export default function Home() {
 
           <div className="text-center">
 
-            <div className="text-sm font-medium tracking-[0.3em] text-cyan-500">
-              CONTACT
-            </div>
+            <div className="text-center">
+
+  <div className="text-sm font-medium tracking-[0.3em] text-cyan-500">
+    CONTACT
+  </div>
+
+  <h2 className="mt-5 text-5xl font-black">
+    Начать подготовку
+  </h2>
+
+  {/* CONTACT CARDS */}
+  <div className="mt-10 grid gap-4 md:grid-cols-2">
+
+    <a
+      href="https://t.me/alextutor72"
+      target="_blank"
+      className="rounded-3xl border border-white/40 bg-white/70 p-6 shadow-lg backdrop-blur-xl transition hover:-translate-y-1"
+    >
+      <div className="text-sm text-gray-400">
+        Telegram
+      </div>
+
+      <div className="mt-2 text-2xl font-black">
+        @alextutor72
+      </div>
+    </a>
+
+    <a
+      href="https://max.ru/u/f9LHodD0cOKhoQfyeVt27KMIawrLuMr0j2OgkYBrXB5aoRqvaLMwhclvI2o"
+      target="_blank"
+      className="rounded-3xl border border-white/40 bg-white/70 p-6 shadow-lg backdrop-blur-xl transition hover:-translate-y-1"
+    >
+      <div className="text-sm text-gray-400">
+        MAX
+      </div>
+
+      <div className="mt-2 text-2xl font-black">
+        @alextutor72
+      </div>
+    </a>
+
+  </div>
+</div>
 
             <h2 className="mt-5 text-5xl font-black">
               Начать подготовку
