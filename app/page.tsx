@@ -2,8 +2,6 @@
 
 import CursorGlow from "@/components/CursorGlow";
 import SmoothScroll from "@/components/SmoothScroll";
-import LoadingScreen from "@/components/LoadingScreen";
-import TypingText from "@/components/TypingText";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -19,7 +17,7 @@ export default function Home() {
 
       <CursorGlow />
       
-      <LoadingScreen />
+      
       <SmoothScroll />
 
       {/* BACKGROUND */}
@@ -102,14 +100,14 @@ export default function Home() {
               </div>
 
               <h1 className="text-6xl font-black leading-[0.95] tracking-tight md:text-8xl">
-                Future
+                Результат,
                 <span className="block bg-gradient-to-r from-cyan-500 to-violet-500 bg-clip-text text-transparent">
-                  Learning
+                  а не просто занятия
                 </span>
               </h1>
 
               <div className="mt-8 max-w-xl">
-                <TypingText />
+               
               </div>
 
               <div className="mt-12 flex flex-wrap gap-5">
@@ -171,6 +169,7 @@ export default function Home() {
 
         <div className="mt-2 text-3xl font-black">
           Student Analytics
+
         </div>
       </div>
 
@@ -260,7 +259,145 @@ export default function Home() {
 </motion.div>
         </div>
       </section>
+      <section className="relative z-10 px-6 py-24">
 
+  <div className="mx-auto max-w-7xl">
+
+    <div className="flex items-end justify-between">
+
+      <div>
+        <div className="text-sm font-semibold tracking-[0.2em] text-cyan-500">
+          ANALYTICS
+        </div>
+        <section className="relative z-10 px-6 py-24">
+
+  <div className="mx-auto max-w-7xl">
+
+    <div className="text-center">
+
+      <div className="text-sm font-semibold tracking-[0.2em] text-cyan-500">
+        UNIVERSITIES
+      </div>
+
+      <h2 className="mt-4 text-5xl font-black">
+        Куда поступают ученики
+      </h2>
+    </div>
+
+    <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+      {[
+        "МГУ",
+        "ВШЭ",
+        "ИТМО",
+        "СПбГУ",
+      ].map((uni) => (
+        <motion.div
+          whileHover={{
+            y: -6,
+            scale: 1.02,
+          }}
+          key={uni}
+          className="rounded-[36px] border border-white/40 bg-white/70 p-10 text-center shadow-xl backdrop-blur-2xl"
+        >
+          <div className="text-3xl font-black">
+            {uni}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+        <h2 className="mt-4 text-5xl font-black">
+          Результаты учеников
+        </h2>
+      </div>
+
+      <div className="hidden text-gray-500 md:block">
+        Данные за последние 3 года
+      </div>
+    </div>
+
+    <div className="mt-14 grid gap-8 lg:grid-cols-3">
+
+      {/* BIG CHART */}
+      <div className="rounded-[40px] border border-white/40 bg-white/70 p-10 shadow-xl backdrop-blur-2xl lg:col-span-2">
+
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="text-sm text-gray-500">
+              Средний результат ЕГЭ
+            </div>
+
+            <div className="mt-2 text-5xl font-black">
+              94 балла
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-green-100 px-4 py-2 font-bold text-green-700">
+            +18%
+          </div>
+        </div>
+
+        {/* fake chart */}
+        <div className="mt-12 flex h-[220px] items-end gap-5">
+
+          {[45, 60, 72, 81, 88, 94].map((h, i) => (
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{
+                height: `${h}%`,
+              }}
+              transition={{
+                duration: 1,
+                delay: i * 0.08,
+              }}
+              key={i}
+              className="flex-1 rounded-t-[30px] bg-gradient-to-t from-cyan-500 to-blue-400"
+            />
+          ))}
+        </div>
+
+        <div className="mt-6 flex justify-between text-sm text-gray-400">
+          <span>2020</span>
+          <span>2021</span>
+          <span>2022</span>
+          <span>2023</span>
+          <span>2024</span>
+          <span>2025</span>
+        </div>
+      </div>
+
+      {/* SIDE STATS */}
+      <div className="space-y-8">
+
+        {[
+          ["63", "Средний по стране"],
+          ["91", "Мои ученики"],
+          ["TOP", "МГУ / ВШЭ / ИТМО"],
+        ].map(([value, label]) => (
+          <motion.div
+            whileHover={{
+              y: -5,
+            }}
+            key={label}
+            className="rounded-[36px] border border-white/40 bg-white/70 p-8 shadow-xl backdrop-blur-2xl"
+          >
+
+            <div className="text-5xl font-black text-cyan-500">
+              {value}
+            </div>
+
+            <div className="mt-4 text-gray-500">
+              {label}
+            </div>
+          </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
       {/* STATS */}
       <section
         id="stats"
@@ -311,7 +448,11 @@ export default function Home() {
             </h2>
 
             <p className="mx-auto mt-8 max-w-2xl text-xl text-gray-500">
-              Designed like a premium AI platform instead of a traditional tutoring website.
+            <p className="mt-8 max-w-2xl text-xl leading-relaxed text-gray-500">
+              Современная система подготовки к ЕГЭ и поступлению
+              в ведущие вузы России с аналитикой прогресса,
+              персональной стратегией и AI-инструментами обучения.
+            </p>
             </p>
           </div>
 
@@ -391,6 +532,27 @@ export default function Home() {
             >
               Send Request
             </motion.button>
+            <div className="mt-14 grid max-w-2xl grid-cols-3 gap-5">
+
+            {[
+              ["94", "Средний балл"],
+              ["120+", "Учеников"],
+              ["87%", "Поступление в топ вузы"],
+            ].map(([value, label]) => (
+              <div
+                key={label}
+                className="rounded-3xl border border-white/40 bg-white/70 p-6 shadow-lg backdrop-blur-xl"
+              >
+                <div className="text-4xl font-black text-cyan-600">
+                  {value}
+                </div>
+
+                <div className="mt-2 text-sm text-gray-500">
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
           </form>
         </div>
       </section>
