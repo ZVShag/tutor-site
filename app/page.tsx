@@ -3,6 +3,7 @@
 import CursorGlow from "@/components/CursorGlow";
 import SmoothScroll from "@/components/SmoothScroll";
 import LoadingScreen from "@/components/LoadingScreen";
+import TypingText from "@/components/TypingText";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -71,42 +72,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       {/* NAVBAR */}
-      <header className="fixed top-0 z-50 w-full border-b border-black/5 bg-white/50 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="text-2xl font-black tracking-tight"
-          >
-            ALEXEY<span className="text-cyan-500">.AI</span>
-          </motion.div>
-
-          <nav className="hidden gap-10 text-sm text-gray-600 md:flex">
-            <a href="#features" className="hover:text-cyan-500">
-              Features
-            </a>
-
-            <a href="#stats" className="hover:text-cyan-500">
-              Results
-            </a>
-
-            <a href="#contact" className="hover:text-cyan-500">
-              Contact
-            </a>
-          </nav>
-
-          <motion.a
-            whileHover={{
-              scale: 1.03,
-              y: -2,
-            }}
-            whileTap={{ scale: 0.98 }}
-            href="#contact"
-            className="rounded-full bg-black px-5 py-3 text-sm font-bold text-white"
-          >
-            Get Started
-          </motion.a>
-        </div>
+      <header className="fixed top-4 left-1/2 z-50 w-[95%] max-w-7xl -translate-x-1/2 rounded-3xl border border-white/40 bg-white/60 shadow-[0_10px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl">
       </header>
 
       {/* HERO */}
@@ -142,10 +108,9 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-xl text-xl leading-relaxed text-gray-500">
-                Premium tutoring platform with modern technology,
-                adaptive learning and a next-generation educational experience.
-              </p>
+              <div className="mt-8 max-w-xl">
+                <TypingText />
+              </div>
 
               <div className="mt-12 flex flex-wrap gap-5">
 
