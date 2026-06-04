@@ -72,14 +72,14 @@ export default function Home() {
         <div className="flex items-center justify-between px-8 py-5">
 
           <div className="text-xl font-black tracking-tight">
-            ALEXEY.AI
+            ALEXEYTUTOR
           </div>
 
           <nav className="hidden gap-10 text-sm font-medium text-gray-500 md:flex">
-            <a href="#analytics">Analytics</a>
-            <a href="#universities">Universities</a>
-            <a href="#features">System</a>
-            <a href="#contact">Contact</a>
+            <a href="#analytics">Результаты</a>
+            <a href="#universities">Поступление</a>
+            <a href="#features">Система</a>
+            <a href="#contact">Контакты</a>
           </nav>
 
           <a
@@ -206,111 +206,75 @@ export default function Home() {
 
             <div className="relative overflow-hidden rounded-[40px] border border-white/40 bg-white/70 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl">
 
-              <div className="absolute right-[-100px] top-[-100px] h-[220px] w-[220px] rounded-full bg-cyan-400/20 blur-3xl" />
-
-              <div className="flex items-center justify-between">
+                <div className="absolute right-[-100px] top-[-100px] h-[220px] w-[220px] rounded-full bg-cyan-400/20 blur-3xl" />
 
                 <div>
                   <div className="text-sm font-medium text-gray-400">
-                    AI Dashboard
+                    Результаты учеников
                   </div>
 
                   <div className="mt-2 text-3xl font-black">
-                    Student Analytics
+                    Подготовка к ЕГЭ и поступлению
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-cyan-100 px-4 py-2 text-sm font-bold text-cyan-700">
-                  LIVE
-                </div>
-              </div>
+                {/* главный показатель */}
+                <div className="mt-8 rounded-3xl bg-gradient-to-br from-cyan-500 to-blue-500 p-8 text-white">
 
-              {/* SCORE */}
-              <motion.div
-                whileHover={{
-                  y: -4,
-                }}
-                className="mt-8 rounded-3xl border border-black/5 bg-gradient-to-br from-cyan-500 to-blue-500 p-8 text-white shadow-2xl"
-              >
-
-                <div className="text-sm opacity-80">
-                  Average Progress
-                </div>
-
-                <div className="mt-3 text-6xl font-black">
-                  94%
-                </div>
-
-                <div className="mt-4 h-3 overflow-hidden rounded-full bg-white/20">
-
-                  <motion.div
-                    initial={{
-                      width: 0,
-                    }}
-                    animate={{
-                      width: "94%",
-                    }}
-                    transition={{
-                      duration: 1.5,
-                    }}
-                    className="h-full rounded-full bg-white"
-                  />
-                </div>
-              </motion.div>
-
-              {/* MINI CARDS */}
-              <div className="mt-6 grid gap-5 md:grid-cols-2">
-
-                {[
-                  ["120+", "Students"],
-                  ["AI", "Assistant"],
-                  ["24/7", "Support"],
-                  ["1:1", "Mentoring"],
-                ].map(([value, label]) => (
-                  <motion.div
-                    whileHover={{
-                      y: -4,
-                      scale: 1.02,
-                    }}
-                    key={label}
-                    className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-lg backdrop-blur-xl"
-                  >
-
-                    <div className="text-3xl font-black text-cyan-500">
-                      {value}
-                    </div>
-
-                    <div className="mt-2 text-gray-500">
-                      {label}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* AI STATUS */}
-              <motion.div
-                whileHover={{
-                  y: -3,
-                }}
-                className="mt-6 rounded-3xl border border-black/5 bg-black p-6 text-white"
-              >
-
-                <div className="flex items-center justify-between">
-
-                  <div>
-                    <div className="text-sm text-gray-400">
-                      AI Recommendation
-                    </div>
-
-                    <div className="mt-2 text-xl font-bold">
-                      Personalized Learning Path Ready
-                    </div>
+                  <div className="text-sm opacity-80">
+                    Средний результат
                   </div>
 
-                  <div className="h-4 w-4 rounded-full bg-green-400 shadow-[0_0_20px_rgba(74,222,128,0.9)]" />
+                  <div className="mt-3 text-6xl font-black">
+                    94
+                  </div>
+
+                  <div className="mt-2 text-lg">
+                    балла на ЕГЭ
+                  </div>
                 </div>
-              </motion.div>
-            </div>
+
+                {/* карточки */}
+                <div className="mt-6 grid gap-5 md:grid-cols-2">
+
+                  {[
+                    ["120+", "Подготовленных учеников"],
+                    ["87%", "Поступили в топ-вузы"],
+                    ["3 года", "Средний опыт подготовки"],
+                    ["1:1", "Индивидуальная работа"],
+                  ].map(([value, label]) => (
+                    <div
+                      key={label}
+                      className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-lg"
+                    >
+                      <div className="text-3xl font-black text-cyan-600">
+                        {value}
+                      </div>
+
+                      <div className="mt-2 text-gray-500">
+                        {label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* поступления */}
+                <div className="mt-6 rounded-3xl border border-black/5 bg-black p-6 text-white">
+
+                  <div className="text-sm text-gray-400">
+                    Последние поступления
+                  </div>
+
+                  <div className="mt-3 space-y-2">
+
+                    <div>🎓 МГУ — Экономика</div>
+                    <div>🎓 ВШЭ — Прикладная математика</div>
+                    <div>🎓 ИТМО — Программная инженерия</div>
+                    <div>🎓 СПбГУ — Юриспруденция</div>
+
+                  </div>
+                </div>
+              </div>
           </motion.div>
         </div>
       </section>
@@ -327,7 +291,7 @@ export default function Home() {
 
             <div>
               <div className="text-sm font-semibold tracking-[0.2em] text-cyan-500">
-                ANALYTICS
+                Аналитика
               </div>
 
               <h2 className="mt-4 text-5xl font-black">
