@@ -163,28 +163,8 @@ export default function Home() {
                 </motion.a>
               </div>
 
-              {/* HERO STATS */}
-              <div className="mt-14 grid max-w-2xl grid-cols-3 gap-5">
-
-                {[
-                  ["94", "Средний балл"],
-                  ["120+", "Учеников"],
-                  ["87%", "Поступление в топ вузы"],
-                ].map(([value, label]) => (
-                  <div
-                    key={label}
-                    className="rounded-3xl border border-white/40 bg-white/70 p-6 shadow-lg backdrop-blur-xl"
-                  >
-                    <div className="text-4xl font-black text-cyan-600">
-                      {value}
-                    </div>
-
-                    <div className="mt-2 text-sm text-gray-500">
-                      {label}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              
+              
             </motion.div>
           </div>
 
