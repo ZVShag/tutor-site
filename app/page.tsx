@@ -335,7 +335,82 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="relative z-10 px-6 py-28">
+          <div className="mx-auto max-w-7xl">
 
+            <div className="text-center">
+              <div className="text-sm font-semibold tracking-[0.2em] text-cyan-500">
+                КАРЬЕРНЫЕ ТРАЕКТОРИИ
+              </div>
+
+              <h2 className="mt-4 text-5xl font-black">
+                Куда поступают и кем становятся
+              </h2>
+
+              <p className="mx-auto mt-6 max-w-3xl text-xl text-gray-500">
+                Подготовка строится не только вокруг экзамена,
+                но и вокруг выбора востребованной профессии.
+              </p>
+            </div>
+
+            <div className="mt-16 grid gap-8 lg:grid-cols-2">
+
+              {/* ВУЗЫ */}
+              <div className="rounded-[40px] border border-white/40 bg-white/70 p-10 shadow-xl backdrop-blur-2xl">
+
+                <h3 className="text-3xl font-black">
+                  Популярные вузы
+                </h3>
+
+                <div className="mt-8 space-y-4">
+
+                  {[
+                    "Тюменский индустриальный университет (ТИУ)",
+                    "Тюменский государственный университет (ТюмГУ)",
+                    "УрФУ",
+                    "СПбПУ",
+                    "ИТМО",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-black/5 bg-white p-5"
+                    >
+                      🎓 {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* НАПРАВЛЕНИЯ */}
+              <div className="rounded-[40px] border border-white/40 bg-white/70 p-10 shadow-xl backdrop-blur-2xl">
+
+                <h3 className="text-3xl font-black">
+                  Самые перспективные направления
+                </h3>
+
+                <div className="mt-8 space-y-4">
+
+                  {[
+                    "🥇 Программная инженерия",
+                    "🥈 Искусственный интеллект",
+                    "🥉 Data Science",
+                    "🔐 Кибербезопасность",
+                    "💻 Информационные системы",
+                    "⚙️ Робототехника",
+                    "🏭 Автоматизация производств",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-black/5 bg-white p-5"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       {/* UNIVERSITIES */}
       <section
         id="universities"
