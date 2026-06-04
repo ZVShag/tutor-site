@@ -113,10 +113,7 @@ export default function Home() {
               }}
             >
 
-              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-cyan-200 bg-white/70 px-5 py-3 text-sm font-medium text-cyan-700 backdrop-blur-xl">
-                <Sparkles className="h-4 w-4" />
-                AI-Powered Education
-              </div>
+              
 
               <h1 className="text-6xl font-black leading-[0.95] tracking-tight md:text-8xl">
                 Результат,
@@ -395,9 +392,9 @@ export default function Home() {
           <div className="text-center">
 
             <h2 className="text-5xl font-black md:text-7xl">
-              Modern
+              Система
               <span className="block bg-gradient-to-r from-cyan-500 to-violet-500 bg-clip-text text-transparent">
-                Education System
+                ПОДГОТОВКИ К ЭКЗАМЕНАМ
               </span>
             </h2>
 
