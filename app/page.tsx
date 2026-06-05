@@ -79,7 +79,11 @@ export default function Home() {
             <a href="#analytics">Результаты</a>
             <a href="#universities">Поступление</a>
             <a href="#features">Система</a>
+            <a href="/materials" className="text-gray-500 transition hover:text-cyan-600">
+                Материалы
+            </a>
             <a href="#contact">Контакты</a>
+
           </nav>
 
           <a
